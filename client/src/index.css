@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(20, 14.3%, 4.1%);
+  --muted: hsl(60, 4.8%, 95.9%);
+  --muted-foreground: hsl(25, 5.3%, 44.7%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(20, 14.3%, 4.1%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(20, 14.3%, 4.1%);
+  --border: hsl(20, 5.9%, 90%);
+  --input: hsl(20, 5.9%, 90%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(60, 4.8%, 95.9%);
+  --secondary-foreground: hsl(24, 9.8%, 10%);
+  --accent: hsl(60, 4.8%, 95.9%);
+  --accent-foreground: hsl(24, 9.8%, 10%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(60, 9.1%, 97.8%);
+  --ring: hsl(20, 14.3%, 4.1%);
+  --radius: 0.5rem;
+  
+  /* Space theme colors */
+  --space-50: hsl(215, 25%, 97%);
+  --space-100: hsl(215, 25%, 94%);
+  --space-200: hsl(215, 25%, 87%);
+  --space-300: hsl(215, 20%, 74%);
+  --space-400: hsl(215, 16%, 56%);
+  --space-500: hsl(215, 19%, 42%);
+  --space-600: hsl(215, 28%, 32%);
+  --space-700: hsl(215, 32%, 26%);
+  --space-800: hsl(215, 39%, 21%);
+  --space-900: hsl(215, 47%, 16%);
+}
+
+.dark {
+  --background: hsl(215, 47%, 16%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(215, 39%, 21%);
+  --muted-foreground: hsl(215, 16%, 56%);
+  --popover: hsl(215, 39%, 21%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(215, 39%, 21%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(215, 32%, 26%);
+  --input: hsl(215, 32%, 26%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(215, 32%, 26%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(215, 32%, 26%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(215, 20%, 74%);
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .font-inter {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+  
+  .animate-slide-in-right {
+    animation: slideInRight 0.3s ease-out forwards;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Leaflet map styles */
+.leaflet-container {
+  background: #1e293b !important;
+}
+
+.satellite-marker {
+  transition: all 0.3s ease;
+}
+
+.satellite-marker:hover {
+  transform: scale(1.2);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--space-800);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--space-600);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--space-500);
+}
